@@ -11,4 +11,4 @@ ENV DBNAME="flask-db"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
-ENTRYPOINT [ "app.py" ]
+ENTRYPOINT [ "python", "app.py" ]
