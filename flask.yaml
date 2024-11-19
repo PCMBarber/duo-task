@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: iramakhtar/duo-flask:latest
+        image: iramakhtar/duo-flask-new:latest
         ports:
         - containerPort: 5500
 ---
