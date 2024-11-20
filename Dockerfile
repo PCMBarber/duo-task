@@ -4,10 +4,8 @@ FROM python:3.6
 WORKDIR /app
 COPY . .
 # Install pip dependencies from requirements
-RUN pip install -r requirements.txt
-# Set YOUR_NAME environment variable
-ENV MYSQLPW="root"
-ENV DBNAME="flask-db"
+RUN pip install -r "requirements.txt"
+ENV YOUR_NAME="Iram Akhtar"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
