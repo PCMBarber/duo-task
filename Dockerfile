@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 # Install pip dependencies from requirements
 RUN pip install -r "requirements.txt"
-ENV YOUR_NAME="Iram A"
+ENV YOUR_NAME="DEV CHANGE"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
