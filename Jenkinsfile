@@ -27,7 +27,7 @@ pipeline {
                         '''
                     } else if (env.GIT_BRANCH == 'origin/dev') {
                         sh '''
-                        docker build -t stratcastor/duo-jenk:latest -t stratcastor/duo-jenk:v${BUILD_NUMBER} .
+                        docker build -t stratcastor/duo-jenk-dev:latest -t stratcastor/duo-jenk-dev:v${BUILD_NUMBER} .
                         '''
                     } else {
                         sh'echo "Unrecognised branch"'
