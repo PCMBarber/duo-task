@@ -5,7 +5,7 @@ COPY . .
 # Install pip dependencies from requirements
 RUN pip install -r "requirements.txt"
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="DEV CHANGE"
+ENV YOUR_NAME="Hannah Montanna"
 # Expose the correct port
 EXPOSE 5500
 # Create an entrypoint
