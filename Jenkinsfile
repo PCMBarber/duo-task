@@ -10,10 +10,10 @@ pipeline {
                         '''
                     } else if (env.GIT_BRANCH == 'origin/dev') {
                         sh '''
-                        kubectl create ns dev || echo "------- Prod Namespace Already Exists -------"
+                        kubectl create ns dev || echo "------- Dev Namespace Already Exists -------"
                         '''
                     } else {
-                        sh'echo "Unrecogognised branch"'
+                        sh'echo "Unrecognised branch"'
                     }
                 }
             }
@@ -30,7 +30,7 @@ pipeline {
                         docker build -t stratcastor/duo-jenk:latest -t stratcastor/duo-jenk:v${BUILD_NUMBER} .
                         '''
                     } else {
-                        sh'echo "Unrecogognised branch"'
+                        sh'echo "Unrecognised branch"'
                     }
                 }
             }
@@ -45,11 +45,11 @@ pipeline {
                         '''
                     } else if (env.GIT_BRANCH == 'origin/dev') {
                         sh '''
-                        docker push stratcastor/duo-jenk:latest
-                        docker push stratcastor/duo-jenk:v${BUILD_NUMBER}
+                        docker push stratcastor/duo-jenk-dev:latest
+                        docker push stratcastor/duo-jenk-dev:v${BUILD_NUMBER}
                         '''
                     } else {
-                        sh'echo "Unrecogognised branch"'
+                        sh'echo "Unrecognised branch"'
                     }
                 }
             }
@@ -65,10 +65,10 @@ pipeline {
                     } else if (env.GIT_BRANCH == 'origin/dev') {
                         sh'''
                         kubectl apply -f ./kubernetes -n dev
-                        kubectl set image deployment/flask-deployment flask-container=stratcastor/duo-jenk:v${BUILD_NUMBER} -n dev
+                        kubectl set image deployment/flask-deployment flask-container=stratcastor/duo-jenk-dev:v${BUILD_NUMBER} -n dev
                         '''
                     } else {
-                        sh'echo "Unrecogognised branch"'
+                        sh'echo "Unrecognised branch"'
                     }
                 }
             }
