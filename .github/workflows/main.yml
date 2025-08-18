@@ -7,6 +7,7 @@ jobs:
     steps:
       - run: echo 'This is a demo'
       - run: echo 'We would build code here'
+      - run: cat README.md
   test:
     runs-on: ubuntu-latest
     steps:
