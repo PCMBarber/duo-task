@@ -2,7 +2,12 @@ on:
   push:
     branches: [ main ]
 jobs:
-  demo:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'This is a demo'
+      - run: echo 'We would build code here'
+  test:
     runs-on: ubuntu-latest
     steps:
       - run: echo 'This is a demo'
