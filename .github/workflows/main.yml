@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo 'This is a demo'
       - run: echo 'We would build code here'
-      - run: pwd
+      - run: ls
   test:
     runs-on: ubuntu-latest
     steps:
